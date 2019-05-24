@@ -14,7 +14,6 @@ public class WXUtils {
      * APP_ID 替换为你的应用从官方网站申请到的合法appID
      */
     public static String APP_ID = "wx4c96b6b8da494224";
-    private static IWXAPI wxapi;
 
     public static IWXAPI reg(Context context) {
         if (context != null) {

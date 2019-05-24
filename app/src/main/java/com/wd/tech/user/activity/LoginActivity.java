@@ -64,7 +64,7 @@ public class LoginActivity extends AppCompatActivity implements IView {
     @BindView(R.id.image_eye)
     ImageView image_eye;
     @BindView(R.id.weixin)
-            ImageView weixin;
+    ImageView weixin;
     @BindView(R.id.renlian)
             ImageView renlian;
     String pwd2;
@@ -109,8 +109,6 @@ public class LoginActivity extends AppCompatActivity implements IView {
                 map.put("pwd",pwd2);
                 iPresentermpl.postRequest(Api.LOGIN,map,LoginBean.class);
                 break;
-
-
             case R.id.weixin:
                 if (!api.isWXAppInstalled()) {
                     Toast.makeText(LoginActivity.this,"您还未安装微信客户端",Toast.LENGTH_LONG).show();

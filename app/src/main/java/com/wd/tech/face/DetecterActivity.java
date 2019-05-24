@@ -179,6 +179,7 @@ public class DetecterActivity extends Activity implements OnCameraListener, View
 							mImageView.setImageAlpha(255);
 							mImageView.setImageBitmap(bmp);
 							Toast.makeText(DetecterActivity.this, "识别成功！", Toast.LENGTH_SHORT).show();
+
 							Intent intent=new Intent(DetecterActivity.this,ShowActivity.class);
 							startActivity(intent);
 						}

@@ -28,7 +28,7 @@ private Handler handler=new Handler() {
             case 0:
                 if (t == 0) {
                     //sadsad
-                    Intent intent=new Intent(MainActivity.this,ShowActivity.class);
+                    Intent intent=new Intent(MainActivity.this,LoginActivity.class);
                     startActivity(intent);
                     finish();
                     return;

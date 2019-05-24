@@ -3,6 +3,7 @@ package com.wd.tech.wxapi;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.WindowManager;
@@ -36,7 +37,7 @@ private static String APP_ID = "wx4c96b6b8da494224";
     private static PayReq req;
     private static IWXAPI api;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wxentry);
         iPresentermpl=new IPresentermpl(this);
@@ -44,15 +45,17 @@ private static String APP_ID = "wx4c96b6b8da494224";
         api=WXAPIFactory.createWXAPI(this,APP_ID,false);
         api.handleIntent(getIntent(),this);
         WXUtils.reg(this).handleIntent(getIntent(),this);
-        Intent intent = getIntent();
-        req.appId = intent.getStringExtra("appId");
-        req.nonceStr = intent.getStringExtra("nonceStr");
-        req.partnerId = intent.getStringExtra("partnerId");
-        req.prepayId = intent.getStringExtra("prepayId");
-        req.sign = intent.getStringExtra("sign");
-        req.timeStamp = intent.getStringExtra("timeStamp");
-        req.packageValue = intent.getStringExtra("packageValue");
-        api.sendReq(req);
+
+//        Intent intent = getIntent();
+//        req.appId = intent.getStringExtra("appId");
+//        req.nonceStr = intent.getStringExtra("nonceStr");
+//        req.partnerId = intent.getStringExtra("partnerId");
+//        req.prepayId = intent.getStringExtra("prepayId");
+//        req.sign = intent.getStringExtra("sign");
+//        req.timeStamp = intent.getStringExtra("timeStamp");
+//        req.packageValue = intent.getStringExtra("packageValue");
+//        api.sendReq(req);
+       // finish();
     }
 
     @Override

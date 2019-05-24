@@ -70,9 +70,6 @@
         <activity android:name=".activity.NewsMessageActivity" />
         <activity android:name=".SingActivity" />
         <activity android:name=".CollectActivity" />
-        <activity
-            android:name=".wxapi.WXEntryActivity"
-            android:exported="true" />
         <activity android:name=".activity.QuerypostsActivity" />
         <activity android:name=".home.activity.PayActivity" />
         <activity android:name=".message.activity.GroupActivity" />
@@ -87,6 +84,8 @@
         <activity android:name=".SettingActivity" />
         <activity android:name=".MessageActivity" />
         <activity android:name=".SignActivity" />
+        <activity android:name=".wxapi.WXEntryActivity"
+            android:exported="true"/>
          <activity android:name=".face.DetecterActivity"></activity>
          <activity android:name=".face.RegisterActivity"></activity>
          <activity android:name=".face.PermissionAcitivity" />

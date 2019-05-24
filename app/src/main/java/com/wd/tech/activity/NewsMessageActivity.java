@@ -103,7 +103,7 @@ public class NewsMessageActivity extends AppCompatActivity implements IView {
     String[] permissions = new String[]{
             Manifest.permission.READ_EXTERNAL_STORAGE,
             Manifest.permission.WRITE_EXTERNAL_STORAGE,
-            Manifest.permission.RECORD_AUDIO,
+            Manifest.permission.CAMERA,
             Manifest.permission.INTERNET};
     List<String> mPermissionList = new ArrayList<>();
     private final int mRequestCode = 100;//权限请求码
@@ -117,7 +117,7 @@ public class NewsMessageActivity extends AppCompatActivity implements IView {
         ButterKnife.bind(this);
         iPresentermpl=new IPresentermpl(this);
         //Appid
-        initWidget();
+
         sharedPreferences = getSharedPreferences("User", MODE_PRIVATE);
         userId = sharedPreferences.getString("userId", "");
         sessionId = sharedPreferences.getString("sessionId", "");
@@ -136,7 +136,22 @@ public class NewsMessageActivity extends AppCompatActivity implements IView {
                     Toast.makeText(NewsMessageActivity.this, "上限了，亲", Toast.LENGTH_SHORT).show();
                 }
             }
-        });
+        });   //逐个判断是否还有未通过的权限
+        for (int i = 0;i<permissions.length;i++){
+            if (ContextCompat.checkSelfPermission(this,permissions[i])!=
+                    PackageManager.PERMISSION_GRANTED){
+                mPermissionList.add(permissions[i]);//添加还未授予的权限到mPermissionList中
+            }
+        }
+        //申请权限
+        if (mPermissionList.size()>0){//有权限没有通过，需要申请
+            ActivityCompat.requestPermissions(this,permissions,mRequestCode);
+        }else {
+            //权限已经都通过了，可以将程序继续打开了
+            initWidget();
+        }
+
+
 
 
 
@@ -151,23 +166,6 @@ public class NewsMessageActivity extends AppCompatActivity implements IView {
                 switch (view.getId())
                 {
                     case R.id.recycler:
-
-//                        mPermissionList.clear();//清空已经允许的没有通过的权限
-//                        //逐个判断是否还有未通过的权限
-//                        for (int i = 0;i<permissions.length;i++){
-//                            if (ContextCompat.checkSelfPermission(this,permissions[i])!=
-//                                    PackageManager.PERMISSION_GRANTED){
-//                                mPermissionList.add(permissions[i]);//添加还未授予的权限到mPermissionList中
-//                            }
-//                        }
-//                        //申请权限
-//                        if (mPermissionList.size()>0){//有权限没有通过，需要申请
-//                            ActivityCompat.requestPermissions(this,permissions,mRequestCode);
-//                        }else {
-//                            //权限已经都通过了，可以将程序继续打开了
-//                            getpop();
-//                        }
-//                        getpop();
                         break;
                     case R.id.messageok:
                         String name=messagecontent.getText().toString();
@@ -191,7 +189,6 @@ public class NewsMessageActivity extends AppCompatActivity implements IView {
                     case R.id.message_qx:
                             finish();
                         break;
-                        //开启语音权限
 
                         default:break;
                 }
@@ -239,37 +236,6 @@ public  void  initWidget()
 
             //第一种方式，弹出选择和拍照的dialog
             showPop();
-
-            //第二种方式，直接进入相册，但是 是有拍照得按钮的
-            //参数很多，根据需要添加
-
-//            PictureSelector.create(MainActivity.this)
-//                    .openGallery(PictureMimeType.ofImage())// 全部.PictureMimeType.ofAll()、图片.ofImage()、视频.ofVideo()、音频.ofAudio()
-//                    .maxSelectNum(maxSelectNum)// 最大图片选择数量
-//                    .minSelectNum(1)// 最小选择数量
-//                    .imageSpanCount(4)// 每行显示个数
-//                    .selectionMode(PictureConfig.MULTIPLE)// 多选 or 单选PictureConfig.MULTIPLE : PictureConfig.SINGLE
-//                    .previewImage(true)// 是否可预览图片
-//                    .compressGrade(Luban.THIRD_GEAR)// luban压缩档次，默认3档 Luban.FIRST_GEAR、Luban.CUSTOM_GEAR
-//                    .isCamera(true)// 是否显示拍照按钮
-//                    .isZoomAnim(true)// 图片列表点击 缩放效果 默认true
-//                    //.setOutputCameraPath("/CustomPath")// 自定义拍照保存路径
-//                    .enableCrop(true)// 是否裁剪
-//                    .compress(true)// 是否压缩
-//                    .compressMode(LUBAN_COMPRESS_MODE)//系统自带 or 鲁班压缩 PictureConfig.SYSTEM_COMPRESS_MODE or LUBAN_COMPRESS_MODE
-//                    //.sizeMultiplier(0.5f)// glide 加载图片大小 0~1之间 如设置 .glideOverride()无效
-//                    .glideOverride(160, 160)// glide 加载宽高，越小图片列表越流畅，但会影响列表图片浏览的清晰度
-//                    .withAspectRatio(1, 1)// 裁剪比例 如16:9 3:2 3:4 1:1 可自定义
-//                    //.selectionMedia(selectList)// 是否传入已选图片
-//                    //.previewEggs(false)// 预览图片时 是否增强左右滑动图片体验(图片滑动一半即可看到上一张是否选中)
-//                    //.cropCompressQuality(90)// 裁剪压缩质量 默认100
-//                    //.compressMaxKB()//压缩最大值kb compressGrade()为Luban.CUSTOM_GEAR有效
-//                    //.compressWH() // 压缩宽高比 compressGrade()为Luban.CUSTOM_GEAR有效
-//                    //.cropWH()// 裁剪宽高比，设置如果大于图片本身宽高则无效
-//                    .rotateEnabled(false) // 裁剪是否可旋转图片
-//                    //.scaleEnabled()// 裁剪是否可放大缩小图片
-//                    //.recordVideoSecond()//录制视频秒数 默认60s
-//                    .forResult(PictureConfig.CHOOSE_REQUEST);//结果回调onActivityResult code
         }
     };
 
@@ -320,7 +286,6 @@ public  void  initWidget()
                         break;
                     case R.id.tv_cancel:
                         //取消
-                        //closePopupWindow();
                         break;
                 }
                 closePopupWindow();
@@ -350,14 +315,6 @@ public  void  initWidget()
 
                     images = PictureSelector.obtainMultipleResult(data);
                     selectList.addAll(images);
-
-//                    selectList = PictureSelector.obtainMultipleResult(data);
-                    // 例如 LocalMedia 里面返回三种path
-                    // 1.media.getPath(); 为原图path
-                    // 2.media.getCutPath();为裁剪后path，需判断media.isCut();是否为true
-                    // 3.media.getCompressPath();为压缩后path，需判断media.isCompressed();是否为true
-                    // 如果裁剪并压缩了，以取压缩路径为准，因为是先裁剪后压缩的
-
                     for (int i = 0; i < selectList.size(); i++) {
                         path = selectList.get(i).getPath();
                         files.add(new File(path));
@@ -368,6 +325,27 @@ public  void  initWidget()
             }
         }
     }
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        boolean hasPermissionDismiss = false;//有权限没有通过
+        if (mRequestCode==requestCode){
+            for (int i=0;i<grantResults.length;i++){
+                if (grantResults[i]==-1){
+                    hasPermissionDismiss=true;
+                    break;
+                }
+            }
+        }
+        if (hasPermissionDismiss){//如果有没有被允许的权限
+            showPermissionDialog();
+        }else {
+            //权限已经都通过了，可以将程序继续打开了
+           initWidget();
+        }
+
+    }
+
     private void showPermissionDialog() {
         if (mPermissionDialog == null) {
             mPermissionDialog = new AlertDialog.Builder(this)
