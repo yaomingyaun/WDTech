@@ -36,7 +36,7 @@ private Handler handler=new Handler() {
                 t--;
                 handler.sendEmptyMessageDelayed(0, 1000);
                 break;
-
+//
             default:
                 break;
         };
