@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f2f2f2">
+    <RelativeLayout
+        android:id="@+id/zi"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="#ffffff"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="14dp">
+
+
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="12dp"
+                android:padding="3dp"
+                android:src="@mipmap/common_nav_btn_back_n" />
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="开通会员"
+                android:textColor="#000"
+                android:textSize="20sp" />
+        </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#888888"
+            android:layout_alignParentBottom="true"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_below="@id/zi"
+        android:id="@+id/chose"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff">
+
+        <RelativeLayout
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/nianzuan"
+                android:layout_width="129dp"
+                android:layout_height="53dp"
+                android:button="@null"
+                android:text="年费VIP"
+                android:gravity="center"
+                android:paddingLeft="10dp"
+                android:textSize="18sp"
+                android:checked="true"
+                android:background="@drawable/zhuan_selector"
+                android:drawableLeft="@mipmap/member_orange"/>
+
+            <RadioButton
+                android:id="@+id/jizuan"
+                android:layout_alignParentRight="true"
+                android:layout_width="129dp"
+                android:layout_height="53dp"
+                android:button="@null"
+                android:text="季VIP"
+                android:gravity="center"
+                android:paddingLeft="10dp"
+                android:textSize="18sp"
+                android:background="@drawable/zhuan_selector"
+                android:drawableLeft="@mipmap/member_green"/>
+
+            <RadioButton
+                android:layout_marginTop="20dp"
+                android:id="@+id/yuezuan"
+                android:layout_below="@id/nianzuan"
+                android:layout_width="129dp"
+                android:layout_height="53dp"
+                android:button="@null"
+                android:text="月VIP"
+                android:gravity="center"
+                android:paddingLeft="10dp"
+                android:textSize="18sp"
+                android:background="@drawable/zhuan_selector"
+                android:drawableLeft="@mipmap/member_purple"/>
+
+            <RadioButton
+                android:layout_marginTop="20dp"
+                android:id="@+id/zhouzuan"
+                android:layout_below="@id/jizuan"
+                android:layout_alignParentRight="true"
+                android:layout_width="129dp"
+                android:layout_height="53dp"
+                android:gravity="center"
+                android:button="@null"
+                android:text="周VIP"
+                android:paddingLeft="10dp"
+                android:textSize="18sp"
+                android:background="@drawable/zhuan_selector"
+                android:drawableLeft="@mipmap/member_red"/>
+
+
+            <View
+                android:id="@+id/xian"
+                android:layout_below="@id/yuezuan"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#8e8e8e"
+                android:layout_marginTop="20dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_below="@id/xian">
+
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:src="@mipmap/pay_rmb_icon"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="10dp"/>
+
+                <TextView
+                    android:id="@+id/money"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:textSize="24sp"
+                    android:textColor="#ff5757"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:textColor="#999999"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="10dp"
+                    android:text="元"
+                    />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/asd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="选择支付方式"
+        android:layout_below="@id/chose"
+        android:layout_marginTop="9dp"
+        android:layout_marginBottom="9dp"
+        android:layout_marginLeft="30dp"/>
+
+    <RelativeLayout
+        android:layout_below="@id/asd"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#fff">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/wx"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:background="@mipmap/common_icon_weixin_n" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="22dp"
+                android:layout_toRightOf="@+id/wx"
+                android:text="微信支付"
+                android:textColor="#666666"
+                android:textSize="14sp" />
+
+
+            <ImageView
+                android:id="@+id/zfb"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/wx"
+                android:background="@mipmap/common_icon_zhifubao_n" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="57dp"
+                android:layout_toRightOf="@+id/zfb"
+                android:text="支付宝支付"
+                android:textColor="#666666"
+                android:textSize="14sp" />
+
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/zfb"
+                android:layout_alignParentRight="true"
+                android:orientation="vertical"
+                android:layout_marginRight="30dp"
+                android:layout_marginBottom="5dp">
+
+                <RadioButton
+                    android:id="@+id/wxzfbtn"
+                    android:layout_width="13dp"
+                    android:layout_height="13dp"
+                    android:layout_below="@+id/ay_pop_down"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/checkimg"
+                    android:checked="true"
+                    android:button="@null"/>
+
+                <RadioButton
+                    android:id="@+id/zfbbtn"
+                    android:layout_width="13dp"
+                    android:layout_height="13dp"
+                    android:layout_below="@+id/wxzfbtn"
+                    android:background="@drawable/checkimg"
+                    android:button="@null"
+                    android:layout_marginTop="20dp"
+                    />
+
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/xiadan"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                android:background="#e5cd76"
+                android:text="立即开通"
+                android:textColor="#666666"
+                android:textSize="20sp" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+
+
+</RelativeLayout>

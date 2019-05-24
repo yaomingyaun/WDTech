@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <FrameLayout
+        android:id="@+id/search_edit_frame"
+        android:layout_width="@dimen/dp_336"
+        android:layout_height="@dimen/dp_32"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/dp_10"
+        android:background="@drawable/linkman_search"
+        android:paddingLeft="@dimen/dp_5">
+
+        <EditText
+            android:id="@+id/linkman_search_ed"
+            android:layout_width="@dimen/dp_336"
+            android:layout_height="@dimen/dp_32"
+            android:layout_marginLeft="@dimen/dp_24"
+            android:background="@null"
+            android:hint="请输入想说的话"
+            android:textSize="12sp" />
+
+        <ImageView
+            android:id="@+id/linkman_search_iv"
+            android:layout_width="@dimen/dp_24"
+            android:layout_height="@dimen/dp_24"
+            android:layout_gravity="left|center_vertical"
+            android:layout_marginRight="20dp"
+            android:src="@mipmap/common_nav_btn_search_n" />
+
+        <ImageView
+            android:visibility="gone"
+            android:id="@+id/linkman_delete_iv"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginRight="20dp"
+            android:background="@mipmap/common_nav_btn_delete_n" />
+    </FrameLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_1"
+        android:layout_below="@id/search_edit_frame"
+        android:background="#ccc" />
+    <LinearLayout
+        android:clickable="true"
+        android:id="@+id/linkman_linear1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:layout_below="@id/search_edit_frame"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:background="#00f"
+            android:layout_width="@dimen/dp_30"
+            android:layout_height="@dimen/dp_30"
+            android:layout_marginLeft="@dimen/dp_24"
+            android:src="@mipmap/nav_icon_add_friend_n" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:text="新朋友"
+            android:textColor="#333"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_1"
+        android:layout_below="@id/linkman_linear1"
+        android:background="#ccc" />
+    <LinearLayout
+        android:clickable="true"
+        android:id="@+id/linkman_linear"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:layout_below="@id/linkman_linear1"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_width="@dimen/dp_30"
+            android:layout_height="@dimen/dp_30"
+            android:layout_marginLeft="@dimen/dp_24"
+            android:src="@mipmap/nav_btn_setting_more_n" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:text="群组"
+            android:textColor="#333"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/text_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_4"
+        android:layout_below="@id/linkman_linear"
+        android:background="#ccc" />
+
+    <ExpandableListView
+        android:id="@+id/linkman_expandable"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/text_view">
+    </ExpandableListView>
+</RelativeLayout>

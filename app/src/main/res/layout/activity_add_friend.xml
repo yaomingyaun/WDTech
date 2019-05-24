@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".message.activity.AddFriendActivity">
+
+    <com.wd.tech.message.view.HeadView
+        android:id="@+id/addfriend_head_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_60"></com.wd.tech.message.view.HeadView>
+
+    <FrameLayout
+        android:layout_width="@dimen/dp_336"
+        android:layout_height="@dimen/dp_32"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/dp_12"
+        android:layout_marginBottom="@dimen/dp_10"
+        android:background="@drawable/linkman_search"
+        android:paddingLeft="@dimen/dp_5">
+
+        <ImageView
+            android:id="@+id/activity_addfrient_search_iv"
+            android:layout_width="@dimen/dp_24"
+            android:layout_height="@dimen/dp_24"
+            android:layout_gravity="left|center_vertical"
+            android:layout_marginLeft="@dimen/dp_12"
+            android:src="@mipmap/common_nav_btn_search_n" />
+
+        <EditText
+            android:id="@+id/activity_addfrient_search_ed"
+            android:layout_width="@dimen/dp_336"
+            android:layout_height="@dimen/dp_32"
+            android:layout_marginLeft="@dimen/dp_45"
+            android:background="@null"
+            android:hint="请根据手机号群id查询"
+            android:textSize="12sp" />
+
+
+        <ImageView
+            android:id="@+id/activity_addfrient_delete_iv"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginRight="20dp"
+            android:background="@mipmap/common_nav_btn_delete_n"
+            android:visibility="gone" />
+    </FrameLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_4"
+        android:layout_below="@id/linkman_linear"
+        android:background="#ccc" />
+
+    <LinearLayout
+        android:id="@+id/user_data"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_70">
+
+        <ImageView
+            android:id="@+id/activity_addfrient_img"
+            android:layout_width="@dimen/dp_60"
+            android:layout_height="@dimen/dp_60"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/dp_12"
+             />
+
+        <TextView
+            android:id="@+id/activity_addfrient_name"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_50"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:gravity="center_vertical"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/addfrent_remark"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:layout_marginLeft="@dimen/dp_12"
+        android:layout_marginTop="@dimen/dp_12"
+        android:layout_marginRight="@dimen/dp_12"
+        android:background="@null"
+        android:visibility="gone" />
+</LinearLayout>

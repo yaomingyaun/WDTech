@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_scroll"
+    android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="#FFFF"
+    android:layout_margin="@dimen/dp_5"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <EditText
+            android:id="@+id/edit_talk"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_50"
+            android:hint="想说点什么"
+            android:layout_weight="1"
+            android:gravity="start"
+            android:background="@drawable/edittext"
+            />
+        <TextView
+            android:id="@+id/submit_talk"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_40"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_alignBaseline="@+id/edit_talk"
+            android:textColor="#666666"
+            android:layout_weight="5"
+            android:gravity="center"
+
+           android:textSize="@dimen/sp_12"
+            android:text="提交" />
+    </LinearLayout>
+
+</ScrollView>

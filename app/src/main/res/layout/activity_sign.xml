@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SignActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="#D8D8D8"
+        android:layout_height="@dimen/dp_80">
+        <ImageView
+            android:id="@+id/my_back"
+            android:layout_width="@dimen/dp_24"
+            android:layout_height="@dimen/dp_24"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_20"
+            android:src="@mipmap/common_icon_back_n" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/my_back"
+            android:layout_centerHorizontal="true"
+            android:text="个性签名"
+            android:textSize="23sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+<LinearLayout
+    android:layout_width="@dimen/dp_300"
+    android:layout_marginTop="@dimen/dp_50"
+    android:layout_marginLeft="@dimen/dp_30"
+    android:layout_marginRight="@dimen/dp_30"
+    android:background="@drawable/attention_shape2"
+    android:layout_height="@dimen/dp_220">
+    <EditText
+        android:id="@+id/my_sign"
+        android:layout_width="@dimen/dp_120"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="@dimen/dp_13"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:text="记录此刻心情" />
+</LinearLayout>
+    <Button
+        android:id="@+id/my_sign_but_put"
+        android:layout_marginTop="@dimen/dp_100"
+        android:layout_marginLeft="@dimen/dp_30"
+        android:layout_marginRight="@dimen/dp_30"
+        android:layout_width="@dimen/dp_300"
+        android:layout_height="@dimen/dp_50"
+        android:text="提交"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/attention_shape2"
+        />
+</LinearLayout>

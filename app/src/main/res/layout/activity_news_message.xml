@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".activity.NewsMessageActivity">
+
+
+<TextView
+   android:id="@+id/message_qx"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentLeft="true"
+    android:layout_margin="@dimen/dp_10"
+    android:textSize="@dimen/sp_16"
+    android:text="取消"/>
+    <TextView
+    android:id="@+id/messqge_yuyin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="@dimen/dp_10"
+        android:textSize="@dimen/sp_16"
+        android:text="开启语音识别"/>
+    <TextView
+        android:id="@+id/messageok"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_margin="@dimen/dp_10"
+        android:textSize="@dimen/sp_16"
+        android:textColor="#20affa"
+        android:text="发表"/>
+    <android.support.v7.widget.CardView
+        android:id="@+id/message_card"
+        android:layout_width="match_parent"
+        android:layout_margin="@dimen/dp_10"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/message_qx">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/messagecontent"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_200"
+                android:maxLength="300"
+                android:textSize="@dimen/sp_12"
+                android:gravity="start"
+                android:background="@null"/>
+            <TextView
+                android:id="@+id/edit_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                 android:layout_alignParentRight="true"
+               android:layout_marginTop="@dimen/dp_190"
+                android:layout_marginRight="@dimen/dp_10"
+                android:textSize="@dimen/sp_12"
+                android:textColor="#666666"
+                android:text="0/300"/>
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+<ImageView
+    android:id="@+id/message_icon"
+    android:layout_below="@id/message_card"
+    android:layout_width="@dimen/dp_100"
+    android:layout_height="@dimen/dp_100"
+    android:layout_margin="@dimen/dp_10"
+    android:background="@mipmap/common_nav_btn_add_n"
+    />
+</RelativeLayout>

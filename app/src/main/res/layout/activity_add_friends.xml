@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="#EEEEEE"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".message.activity.AddFriendsActivity">
+
+    <com.wd.tech.message.view.HeadView
+        android:id="@+id/addfriends_head_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_60"></com.wd.tech.message.view.HeadView>
+
+    <LinearLayout
+        android:id="@+id/user_data"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_70">
+
+        <ImageView
+            android:id="@+id/activity_addfrients_img"
+            android:layout_width="@dimen/dp_60"
+            android:layout_height="@dimen/dp_60"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/dp_12" />
+
+        <TextView
+            android:id="@+id/activity_addfrients_name"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_50"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:gravity="center_vertical"
+            android:textSize="20sp" />
+    </LinearLayout>
+    <TextView
+        android:layout_width="@dimen/dp_60"
+        android:layout_height="@dimen/dp_16"
+        android:text="申请备注"
+        />
+    <EditText
+        android:id="@+id/activity_addfrients_apply_remark"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:background="@null"
+        />
+    <TextView
+        android:layout_width="@dimen/dp_60"
+        android:layout_height="@dimen/dp_16"
+        android:text="好友备注"
+        />
+    <EditText
+        android:id="@+id/activity_addfrients_add_remark"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:background="@null"
+        />
+    <Button
+        android:id="@+id/userActivitys_sendapply"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_40"
+        android:layout_marginRight="@dimen/dp_10"
+        android:background="@drawable/shape_addfriend_button"
+        android:text="发送"
+        android:textColor="#fff" />
+</LinearLayout>

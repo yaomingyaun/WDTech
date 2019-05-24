@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="@dimen/dp_12"
+    android:layout_marginRight="@dimen/dp_12"
+    tools:context=".home.activity.InformationDetailsActivity">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="0dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/title_information"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:text="1111111111111111111111111"
+                android:textSize="@dimen/sp_16" />
+
+            <TextView
+                android:id="@+id/time_information"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/title_information"
+                android:layout_marginTop="@dimen/dp_10"
+                android:textColor="#999999"
+                android:textSize="@dimen/dp_10" />
+
+            <TextView
+                android:id="@+id/introduce_information"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/time_information"
+                android:layout_marginTop="@dimen/dp_10"
+                android:text="33333333333333"
+                android:textColor="#999999"
+                android:textSize="@dimen/sp_12" />
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/img_information"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_187"
+                android:layout_below="@+id/introduce_information"
+                android:layout_marginTop="@dimen/dp_10" />
+
+            <TextView
+                android:id="@+id/introduce_summary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/img_information"
+                android:layout_marginTop="@dimen/dp_10"
+                android:textColor="#666666"
+                android:textSize="@dimen/sp_12" />
+
+            <RelativeLayout
+                android:id="@+id/smwy"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/introduce_summary">
+
+                <WebView
+                    android:id="@+id/show_web"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"></WebView>
+
+                <RelativeLayout
+                    android:id="@+id/re_buy"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_325"
+                    android:layout_marginBottom="@dimen/dp_90">
+
+                    <ImageView
+                        android:id="@+id/img_nobuy"
+                        android:layout_width="@dimen/dp_100"
+                        android:layout_height="@dimen/dp_100"
+                        android:layout_marginLeft="@dimen/dp_130"
+                        android:layout_marginTop="@dimen/dp_70"
+                        android:layout_marginRight="@dimen/dp_130"
+                        android:src="@mipmap/pay_fail" />
+
+                    <Button
+                        android:id="@+id/comebuy"
+                        android:layout_width="@dimen/dp_250"
+                        android:layout_height="@dimen/dp_40"
+                        android:layout_below="@+id/img_nobuy"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="@dimen/dp_25"
+                        android:background="@drawable/nopay"
+                        android:text="尚未购买，付费再来阅读吧"
+                        android:textColor="#fff"
+                        android:textSize="@dimen/sp_16" />
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tuijian"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/smwy"
+                android:layout_marginLeft="@dimen/dp_12"
+                android:layout_marginTop="@dimen/dp_10"
+                android:text="推荐"
+                android:textColor="#999999"
+                android:textSize="@dimen/sp_10" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recommendedlist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tuijian"
+                android:layout_marginLeft="@dimen/dp_12"
+                android:layout_marginTop="@dimen/dp_40"></android.support.v7.widget.RecyclerView>
+
+            <RelativeLayout
+                android:id="@+id/wd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/recommendedlist"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginBottom="@dimen/dp_35"
+                android:background="#fff">
+
+                <TextView
+                    android:id="@+id/ping"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_12"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:text="评论"
+                    android:textColor="#666666"
+                    android:textSize="@dimen/sp_10" />
+
+                <com.jcodecraeer.xrecyclerview.XRecyclerView
+                    android:id="@+id/commentlist"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/ping"
+                    android:layout_marginTop="@dimen/dp_10">
+                </com.jcodecraeer.xrecyclerview.XRecyclerView>
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+    <RelativeLayout
+        android:id="@+id/recyc"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40"
+        android:layout_alignParentBottom="true"
+        android:background="#fff"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_1"
+            android:background="#666666" />
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="@dimen/dp_24"
+            android:layout_height="@dimen/dp_24"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_8"
+            android:layout_marginRight="@dimen/dp_10"
+            android:padding="@dimen/dp_5"
+            android:src="@mipmap/common_nav_btn_back_n" />
+        <TextView
+            android:id="@+id/editcomment"
+            android:layout_width="@dimen/dp_160"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/sp_12"
+            android:layout_toRightOf="@id/back"
+            android:background="@null"
+            android:hint="既然来了，就留点什么吧"
+            android:imeOptions="actionSend"
+            android:paddingTop="@dimen/dp_10"
+            android:paddingBottom="@dimen/dp_10"
+            android:singleLine="true"
+            android:textSize="@dimen/sp_12" />
+
+        <ImageView
+            android:id="@+id/pinglun"
+            android:layout_width="@dimen/dp_16"
+            android:layout_height="@dimen/dp_16"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/editcomment"
+            android:src="@mipmap/common_icon_comment_n" />
+
+        <TextView
+            android:id="@+id/pinglunshu"
+            android:layout_width="@dimen/dp_10"
+            android:layout_height="@dimen/dp_10"
+            android:layout_marginLeft="@dimen/dp_m_5"
+            android:layout_marginTop="@dimen/dp_6"
+            android:layout_toRightOf="@id/pinglun"
+            android:background="@drawable/red_circle"
+            android:gravity="center"
+            android:textColor="#fff"
+            android:textSize="8sp" />
+
+        <ImageView
+            android:id="@+id/great"
+            android:layout_width="@dimen/dp_16"
+            android:layout_height="@dimen/dp_16"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_23"
+            android:layout_toRightOf="@id/pinglun"
+            android:src="@mipmap/common_icon_prise_n" />
+
+        <TextView
+            android:id="@+id/greatshu"
+            android:layout_width="@dimen/dp_10"
+            android:layout_height="@dimen/dp_10"
+            android:layout_marginLeft="@dimen/dp_m_5"
+            android:layout_marginTop="@dimen/sp_6"
+            android:layout_toRightOf="@id/great"
+            android:background="@drawable/red_circle"
+            android:gravity="center"
+            android:textColor="#fff"
+            android:textSize="8sp" />
+
+        <ImageView
+            android:id="@+id/collect"
+            android:layout_width="@dimen/dp_16"
+            android:layout_height="@dimen/dp_16"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp_10"
+            android:layout_toLeftOf="@id/share"
+            android:src="@mipmap/common_icon_collect_n" />
+
+        <ImageView
+            android:id="@+id/share"
+            android:layout_width="@dimen/dp_16"
+            android:layout_height="@dimen/dp_16"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp_12"
+            android:src="@mipmap/common_icon_share_n" />
+
+        <TextView
+            android:id="@+id/shareshu"
+            android:layout_width="@dimen/dp_10"
+            android:layout_height="@dimen/dp_10"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/dp_6"
+            android:layout_marginRight="@dimen/dp_6"
+            android:background="@drawable/red_circle"
+            android:gravity="center"
+            android:textColor="#fff"
+            android:textSize="@dimen/sp_8" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/pinlun_re"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp_60"
+        android:layout_alignParentBottom="true"
+        android:background="#f2f2f2"
+        android:visibility="invisible"
+        >
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_1"
+            android:background="#666666" />
+
+        <EditText
+            android:id="@+id/pinglun_edit"
+            android:layout_width="@dimen/dp_260"
+            android:layout_height="@dimen/dp_95"
+            android:layout_marginTop="@dimen/dp_12"
+            android:layout_marginBottom="@dimen/dp_12"
+            android:hint="既然来了，留下点什么吧!"
+            android:textSize="@dimen/sp_12"
+            />
+
+        <TextView
+            android:id="@+id/submit_text"
+            android:layout_width="@dimen/dp_50"
+            android:layout_height="@dimen/dp_20"
+            android:layout_toRightOf="@id/pinglun_edit"
+            android:layout_marginTop="@dimen/dp_20"
+            android:text="发表"
+            android:textSize="@dimen/sp_10" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/wx_relate"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_66"
+        android:layout_alignParentBottom="true"
+        android:background="#fff"
+        >
+        <ImageView
+            android:id="@+id/share_friend"
+            android:layout_width="@dimen/dp_50"
+            android:layout_height="@dimen/dp_50"
+            android:background="@drawable/sharefrend"
+            android:layout_marginLeft="@dimen/dp_80"
+            android:layout_marginTop="@dimen/dp_10"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="朋友圈"
+            android:textSize="@dimen/sp_16"
+            android:textColor="#666666"
+            android:layout_below="@+id/share_friend"
+            android:layout_marginLeft="@dimen/dp_80"
+            android:layout_marginTop="@dimen/dp_3"
+            />
+        <ImageView
+            android:layout_toRightOf="@+id/share_friend"
+            android:layout_marginLeft="@dimen/dp_80"
+            android:id="@+id/share_cirle"
+            android:layout_width="@dimen/dp_50"
+            android:layout_height="@dimen/dp_50"
+            android:background="@drawable/wxshared"
+            android:layout_marginTop="@dimen/dp_10"
+
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="微信好友"
+            android:textSize="@dimen/sp_16"
+            android:textColor="#666666"
+            android:layout_below="@+id/share_cirle"
+            android:layout_marginLeft="@dimen/dp_170"
+            android:layout_marginTop="@dimen/dp_3"
+            />
+        <View
+            android:id="@+id/shared_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#666666"
+            android:layout_below="@+id/share_cirle"
+            android:layout_marginTop="@dimen/dp_5"
+            ></View>
+        <TextView
+            android:id="@+id/diss_share"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="取消"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="@dimen/dp_200"
+            android:layout_below="@+id/shared_view"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginBottom="@dimen/dp_10"
+            />
+    </RelativeLayout>
+
+</RelativeLayout>

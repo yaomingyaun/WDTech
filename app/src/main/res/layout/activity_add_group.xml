@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".message.activity.AddGroupActivity">
+
+    <com.wd.tech.message.view.HeadView
+        android:id="@+id/activity_addgroup_head"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"></com.wd.tech.message.view.HeadView>
+
+    <ImageView
+        android:layout_width="@dimen/dp_150"
+        android:layout_height="@dimen/dp_130"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/dp_20"
+        android:src="@mipmap/group_head_icon" />
+
+    <EditText
+        android:id="@+id/activity_greatgroup_name"
+        android:layout_width="@dimen/dp_184"
+        android:layout_height="@dimen/dp_40"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/dp_30"
+        android:background="@drawable/shape_great_group"
+        android:gravity="center"
+        android:hint="填写群名称" />
+
+    <EditText
+        android:id="@+id/activity_greatgroup_jieshao"
+        android:layout_width="@dimen/dp_336"
+        android:layout_height="@dimen/dp_119"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/dp_20"
+        android:background="@drawable/shape_great_group"
+        android:gravity="center"
+        android:hint="介绍你的群" />
+
+    <Button
+        android:id="@+id/activity_greatgroup_great"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_20"
+        android:background="@drawable/shape_addfriend_button"
+        android:text="创建"
+        android:textSize="@dimen/dp_24"
+        android:textColor="#fff" />
+</LinearLayout>

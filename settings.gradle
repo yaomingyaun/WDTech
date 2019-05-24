@@ -1,0 +1,5 @@
+include ':app'
+include ':app', ':tabpagerindictor'
+include ':app', ':tabpagerindictor'
+include ':app'
+include ':app', ':tabpagerindictor'

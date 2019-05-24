@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.wd.tech">
+
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 往SDCard写入数据权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission
+        android:name="android.permission.MOUNT_FORMAT_FILESYSTEMS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="androd.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:name=".app.MyApplication"
+        android:allowBackup="true"
+        android:hardwareAccelerated="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:roundIcon="@drawable/icon"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:windowSoftInputMode="adjustNothing"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity
+            android:name=".user.activity.MainActivity"
+            android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".home.activity.MeunActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".home.activity.SearchActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".user.activity.LoginActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".user.activity.SingActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".home.activity.WebActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".activity.NewsAllPlActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".home.activity.InformationDetailsActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".home.activity.NewsAdDetailsActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".home.activity.GroupActivity"
+            android:launchMode="singleTask" />
+        <activity android:name=".home.activity.MeunDetailsActivity" />
+        <activity android:name=".activity.NewsMessageActivity" />
+        <activity android:name=".SingActivity" />
+        <activity android:name=".CollectActivity" />
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:exported="true" />
+        <activity android:name=".activity.QuerypostsActivity" />
+        <activity android:name=".home.activity.PayActivity" />
+        <activity android:name=".message.activity.GroupActivity" />
+        <activity android:name=".message.activity.AddFriendActivity" />
+        <activity android:name=".message.activity.UserInfoActivity" />
+        <activity android:name=".message.activity.AddFriendsActivity" />
+        <activity android:name=".message.activity.NewFriendActivity" />
+        <activity android:name=".message.activity.AddGroupActivity" />
+        <activity android:name=".activity.PhotoViewActivity" />
+        <activity android:name=".ShowActivity" />
+        <activity android:name=".AttentionActivity" />
+        <activity android:name=".SettingActivity" />
+        <activity android:name=".MessageActivity" />
+        <activity android:name=".SignActivity" />
+         <activity android:name=".face.DetecterActivity"></activity>
+         <activity android:name=".face.RegisterActivity"></activity>
+         <activity android:name=".face.PermissionAcitivity" />
+         <activity android:name=".face.FaceActivity"></activity>
+    </application>
+
+</manifest>

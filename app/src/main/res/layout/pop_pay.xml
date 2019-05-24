@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="#fff">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_28"
+                android:layout_marginTop="@dimen/dp_24"
+                android:text="选择付费方式"
+                android:textSize="@dimen/sp_20"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_28"
+                android:text="让阅读随时随地"
+                android:textSize="@dimen/sp_12"
+                android:layout_marginTop="@dimen/dp_10"
+                />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/downpop_image"
+            android:layout_width="@dimen/dp_24"
+            android:layout_height="@dimen/dp_24"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginRight="@dimen/dp_24"
+            android:layout_marginTop="@dimen/dp_10"
+            android:background="@drawable/down" />
+
+    </android.support.constraint.ConstraintLayout>
+
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_120"
+        android:layout_marginLeft="@dimen/dp_12"
+        android:layout_marginRight="@dimen/dp_12"
+        android:layout_marginTop="@dimen/dp_30"
+        android:background="@mipmap/pay_bg_orange"
+        android:padding="@dimen/dp_10">
+
+
+        <TextView
+            android:id="@+id/jifen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/sp_16"
+            android:text="积分兑换"
+            android:textColor="#ffffff"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginLeft="@dimen/dp_10"
+            />
+        <TextView
+            android:id="@+id/interal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/sp_10"
+            android:text="Integral purchase"
+            app:layout_constraintTop_toBottomOf="@+id/jifen"
+            android:layout_marginTop="@dimen/dp_10"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginLeft="@dimen/dp_10"
+            />
+        <ImageView
+            android:layout_width="@dimen/dp_38"
+            android:layout_height="@dimen/dp_38"
+            android:src="@mipmap/payment_method_icon_integration_n"
+            app:layout_constraintTop_toBottomOf="@+id/interal"
+            android:layout_marginTop="@dimen/dp_16"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginLeft="@dimen/dp_10"
+            />
+
+        <TextView
+            android:id="@+id/say"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="购买说明："
+            android:textColor="#ffffff"
+            app:layout_constraintLeft_toRightOf="@+id/jifen"
+            android:layout_marginLeft="@dimen/dp_100"
+            android:textSize="@dimen/sp_12"
+            />
+        <TextView
+            android:id="@+id/jinfenmessage"
+            android:layout_width="@dimen/dp_160"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/sp_10"
+            android:textColor="#ffffff"
+            app:layout_constraintLeft_toRightOf="@+id/jifen"
+            android:layout_marginLeft="@dimen/dp_100"
+            app:layout_constraintTop_toBottomOf="@+id/say"
+            android:text="只需一次性付费即可对该条咨询永久免费阅读"
+            />
+        <TextView
+            android:id="@+id/jifenopen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="点击阅读>>"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            />
+
+
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_120"
+        android:layout_marginLeft="@dimen/dp_12"
+        android:layout_marginRight="@dimen/dp_12"
+        android:layout_marginTop="@dimen/dp_30"
+        android:background="@mipmap/pay_bg_green"
+        android:layout_marginBottom="@dimen/dp_50"
+        android:padding="@dimen/dp_10">
+
+        <TextView
+            android:id="@+id/vippop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="开通会员"
+            android:textColor="#ffffff"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginLeft="@dimen/dp_10"
+            />
+        <TextView
+            android:id="@+id/vipyin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/sp_10"
+            android:text="membership purchase"
+            app:layout_constraintTop_toBottomOf="@+id/vippop"
+            android:layout_marginTop="@dimen/dp_10"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginLeft="@dimen/dp_10"
+            />
+        <ImageView
+            android:layout_width="@dimen/dp_38"
+            android:layout_height="@dimen/dp_38"
+            android:src="@mipmap/payment_method_icon_vip_n"
+            app:layout_constraintTop_toBottomOf="@+id/vipyin"
+            android:layout_marginTop="@dimen/dp_16"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginLeft="@dimen/dp_10"
+            />
+
+        <TextView
+            android:id="@+id/vipsay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="会员说明"
+            android:textColor="#ffffff"
+            app:layout_constraintLeft_toRightOf="@+id/vipyin"
+            android:layout_marginLeft="@dimen/dp_100"
+            android:textSize="@dimen/sp_12"
+            />
+        <TextView
+            android:id="@+id/vipmesssage"
+            android:layout_width="@dimen/dp_160"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/sp_10"
+            android:textColor="#ffffff"
+            app:layout_constraintLeft_toRightOf="@+id/vipyin"
+            android:layout_marginLeft="@dimen/dp_100"
+            app:layout_constraintTop_toBottomOf="@+id/vipsay"
+            android:text="会员可以免费阅读所有付费资讯"
+            />
+        <TextView
+            android:id="@+id/vipopen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="点击开通>>"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            />
+
+
+    </android.support.constraint.ConstraintLayout>
+
+
+
+</LinearLayout>

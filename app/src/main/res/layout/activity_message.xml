@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MessageActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="#D8D8D8"
+        android:layout_height="@dimen/dp_80">
+        <ImageView
+            android:id="@+id/my_back"
+            android:layout_width="@dimen/dp_24"
+            android:layout_height="@dimen/dp_24"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_20"
+            android:src="@mipmap/common_icon_back_n" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/my_back"
+            android:layout_centerHorizontal="true"
+            android:text="我的信息"
+            android:textSize="23sp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/my_finish"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="保存"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/dp_20"
+            android:layout_marginRight="@dimen/dp_20"
+            />
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="@dimen/dp_300"
+        android:layout_marginLeft="@dimen/dp_30"
+        android:layout_marginTop="@dimen/dp_20"
+        android:background="@drawable/attention_shape1"
+        android:orientation="vertical"
+        android:layout_height="@dimen/dp_220">
+
+        <RelativeLayout
+            android:id="@+id/my_message_name"
+            android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/dp_20"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginRight="@dimen/dp_20"
+            android:layout_height="@dimen/dp_35">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_marginTop="@dimen/dp_5"
+                android:textStyle="bold"
+                android:layout_height="wrap_content"
+                android:text="昵称" />
+            <EditText
+                android:id="@+id/my_message_name_user"
+                android:layout_width="@dimen/dp_50"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_alignParentRight="true"
+                android:textSize="@dimen/dp_12"
+                android:background="@null"
+                android:layout_height="wrap_content"
+                android:text="烤面筋" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_2"
+                android:background="#A4A4A4"
+                android:layout_alignParentBottom="true"
+                />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/my_message_sex"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginRight="@dimen/dp_20"
+            android:layout_height="@dimen/dp_35">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_marginTop="@dimen/dp_5"
+                android:textStyle="bold"
+                android:layout_height="wrap_content"
+                android:text="性别" />
+
+            <EditText
+                android:id="@+id/my_message_sex_user"
+                android:layout_width="@dimen/dp_50"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_alignParentRight="true"
+                android:textSize="@dimen/dp_12"
+                android:background="@null"
+                android:layout_height="wrap_content"
+                android:text="女" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_2"
+                android:background="#A4A4A4"
+                android:layout_alignParentBottom="true"
+                />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/my_message_qianming"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginRight="@dimen/dp_20"
+            android:layout_height="@dimen/dp_35">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_marginTop="@dimen/dp_5"
+                android:textStyle="bold"
+                android:layout_height="wrap_content"
+                android:text="签名" />
+            <ImageView
+                android:layout_width="@dimen/dp_20"
+                android:layout_marginTop="@dimen/dp_5"
+                android:layout_alignParentRight="true"
+                android:layout_height="@dimen/dp_20"
+                android:src="@mipmap/my_icon_next_n"
+                />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_2"
+                android:background="#A4A4A4"
+                android:layout_alignParentBottom="true"
+                />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/my_message_birthday"
+            android:layout_width="match_parent"
+
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginRight="@dimen/dp_20"
+            android:layout_height="@dimen/dp_35">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_marginTop="@dimen/dp_5"
+                android:textStyle="bold"
+                android:layout_height="wrap_content"
+                android:text="生日" />
+            <TextView
+                android:id="@+id/my_message_birthday_user"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="@dimen/dp_5"
+                android:layout_alignParentRight="true"
+                android:layout_height="wrap_content"
+                android:text="2019-5-14" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_2"
+                android:background="#A4A4A4"
+                android:layout_alignParentBottom="true"
+                />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/my_message_Email"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginRight="@dimen/dp_20"
+            android:layout_height="@dimen/dp_35">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_marginTop="@dimen/dp_5"
+                android:textStyle="bold"
+                android:layout_height="wrap_content"
+                android:text="邮箱" />
+
+            <EditText
+                android:id="@+id/my_message_Email_user"
+                android:layout_width="@dimen/dp_50"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_alignParentRight="true"
+                android:textSize="@dimen/dp_12"
+                android:background="@null"
+                android:layout_height="wrap_content"
+                android:text="女" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_2"
+                android:background="#A4A4A4"
+                android:layout_alignParentBottom="true"
+                />
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

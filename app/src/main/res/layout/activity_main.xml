@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".user.activity.MainActivity">
+
+    <ImageView
+        android:id="@+id/yindaoye"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@mipmap/login_bg"/>
+    <ImageView
+        android:id="@+id/ydicon"
+        android:layout_width="@dimen/dp_110"
+        android:layout_height="@dimen/dp_110"
+        android:layout_marginTop="@dimen/dp_150"
+        android:layout_centerHorizontal="true"
+        android:background="@mipmap/logo_icon"/>
+    <TextView
+        android:id="@+id/wdkj1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ydicon"
+        android:layout_centerHorizontal="true"
+        android:text="维度科技"
+        android:layout_marginTop="@dimen/dp_236"
+        android:textSize="@dimen/sp_36"
+        android:textColor="#ffffff"/>
+    <TextView
+        android:id="@+id/wdkj2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/wdkj1"
+        android:layout_centerHorizontal="true"
+        android:text="WEIDU  KEJI"
+        android:textSize="@dimen/sp_20"
+        android:textColor="#ffffff"/>
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/wdkj2"
+        android:layout_centerHorizontal="true"
+        android:text="八维移动通信学院作品"
+        android:layout_marginTop="@dimen/dp_50"
+        android:textSize="@dimen/sp_20"
+        android:layout_marginBottom="@dimen/dp_20"
+        android:textColor="#ffffff"/>
+
+</RelativeLayout>

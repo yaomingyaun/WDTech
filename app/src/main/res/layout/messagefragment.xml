@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/mfragment_zong"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#c0c0c0">
+
+        <RadioGroup
+            android:id="@+id/rg_layout"
+            android:layout_width="192dp"
+            android:layout_height="32dp"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/dp_24"
+            android:layout_marginBottom="@dimen/dp_12"
+            android:background="@drawable/radiogroup_background"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/mfragment_messge"
+                style="@style/radio_button_style"
+                android:layout_width="@dimen/dp_90"
+                android:layout_height="@dimen/dp_30"
+                android:layout_gravity="center"
+                android:button="@null"
+                android:checked="true"
+                android:gravity="center"
+                android:text="消息" />
+
+            <RadioButton
+                android:id="@+id/mfragment_linkman"
+                style="@style/radio_button_style"
+                android:layout_width="@dimen/dp_90"
+                android:layout_height="@dimen/dp_30"
+                android:layout_gravity="center"
+                android:button="@null"
+                android:gravity="center"
+                android:text="联系人" />
+        </RadioGroup>
+
+        <ImageView
+            android:id="@+id/mfragment_add"
+            android:layout_width="@dimen/dp_24"
+            android:layout_height="@dimen/dp_24"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/dp_26"
+            android:layout_marginRight="@dimen/dp_12"
+            android:clickable="true"
+            android:src="@mipmap/common_nav_btn_add_n" />
+    </RelativeLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/mfragment_vp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/mfragment_zong"
+        android:layout_marginTop="@dimen/dp_10">
+    </android.support.v4.view.ViewPager>
+    <com.wd.tech.home.view.MessagePop
+        android:id="@+id/mfragment_pop"
+        android:layout_width="@dimen/dp_135"
+        android:layout_height="@dimen/dp_75"
+        android:layout_below="@id/mfragment_zong"
+        android:layout_alignParentRight="true"
+        android:visibility="gone">
+    </com.wd.tech.home.view.MessagePop>
+
+</RelativeLayout>

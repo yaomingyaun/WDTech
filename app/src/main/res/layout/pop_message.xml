@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/dp_130"
+    android:layout_height="@dimen/dp_70"
+    android:layout_gravity="center_horizontal"
+    android:background="#666666"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_34"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_6"
+        android:layout_marginRight="@dimen/dp_12"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_width="@dimen/dp_24"
+            android:layout_height="@dimen/dp_24"
+            android:src="@mipmap/nav_icon_add_friend_n" />
+
+        <TextView
+            android:id="@+id/add_friend"
+            android:clickable="true"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_24"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:text="加好友或群"
+            android:textColor="#fff"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_34"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_12"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_width="@dimen/dp_24"
+            android:layout_height="@dimen/dp_24"
+            android:src="@mipmap/nav_icon_add_group_n" />
+
+        <TextView
+            android:id="@+id/add_group"
+            android:clickable="true"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_24"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:text="创建群聊"
+            android:textColor="#fff"
+            android:textSize="14sp" />
+    </LinearLayout>
+</LinearLayout>
