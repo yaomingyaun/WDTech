@@ -32,7 +32,7 @@
                 android:layout_height="25dp"
                 android:contentDescription="@null"
                 android:scaleType="fitXY"
-                android:background="@color/colorPrimaryDark"/>
+                android:background="@drawable/delete"/>
 
         </LinearLayout>
 

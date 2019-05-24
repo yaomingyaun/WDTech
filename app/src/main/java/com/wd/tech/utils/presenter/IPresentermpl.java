@@ -7,6 +7,8 @@ import com.wd.tech.utils.model.MCallBack;
 import com.wd.tech.utils.view.IView;
 
 import java.io.File;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class IPresentermpl implements Presenter{
@@ -138,6 +140,23 @@ public class IPresentermpl implements Presenter{
             }
         });
     }
+
+    @Override
+    public void imagepost(String url, HashMap<String, String> map, List<File> file, Class clazz) {
+        iModel.imagepost(url, map, file, clazz, new MCallBack() {
+            @Override
+            public void success(Object object) {
+                iView.success(object);
+            }
+
+            @Override
+            public void failure(String error) {
+                iView.failure(error);
+
+            }
+        });
+    }
+
     //防止内存泄漏
     public void deatch(){
       if(iModel!=null){

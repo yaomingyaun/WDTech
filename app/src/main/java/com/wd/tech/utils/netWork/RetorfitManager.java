@@ -11,6 +11,7 @@ import com.wd.tech.app.MyApplication;
 import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
@@ -33,6 +34,7 @@ public class RetorfitManager {
     public static RetorfitManager retorfitManager;
     public final String BASE_URL="https://mobile.bwstudent.com/techApi/";
     public BaseApis baseApis;
+    private MultipartBody build;
     public static synchronized RetorfitManager getInstace(){
         if(retorfitManager==null){
             retorfitManager=new RetorfitManager();
@@ -190,6 +192,26 @@ public class RetorfitManager {
                 .subscribe(getObserver(callBack));
 
 
+    }
+    //发表帖子
+    public void imagepost(String url, HashMap<String,String> map, List<File> file, ICallBack callBack){
+        if(file.size()>0){
+            MultipartBody.Builder builder = new MultipartBody.Builder().setType(MultipartBody.FORM);
+            for (int i = 0; i < file.size(); i++) {
+                builder.addFormDataPart("file", file.get(i).getName(), RequestBody.create(MediaType.parse("image/*"), file.get(i)));
+            }
+            build = builder.build();
+        }else{
+            build=new MultipartBody.Builder()
+                    .setType(MultipartBody.FORM)
+                    .addFormDataPart("","")
+                    .build();
+        }
+
+        baseApis.imagepost(url, map,build)
+                .subscribeOn(Schedulers.io())//io子线程
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(getObserver(callBack));
     }
 
     private Observer getObserver(final ICallBack callBack) {

@@ -1,6 +1,8 @@
 package com.wd.tech.utils.model;
 
 import java.io.File;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -29,4 +31,7 @@ public interface Model {
 
     //添加好友
     void postaddfriend(String url,int firenduid,String remarks, Class clazz, MCallBack mCallBack);
+
+    //上传图文
+    void imagepost(String url, HashMap<String, String> map, List<File> file , Class clazz , MCallBack callBack);
 }

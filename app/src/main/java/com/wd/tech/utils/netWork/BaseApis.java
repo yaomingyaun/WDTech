@@ -1,5 +1,6 @@
 package com.wd.tech.utils.netWork;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import okhttp3.MultipartBody;
@@ -52,5 +53,9 @@ public interface BaseApis {
     @POST
     @FormUrlEncoded
     Observable<ResponseBody> postaddfriend(@Url String url, @Field("friendUid") int finenduid, @Field("remark") String remark );
+
+    //发表帖子
+    @POST
+    Observable<ResponseBody> imagepost(@Url String url, @QueryMap HashMap<String, String> map, @Body MultipartBody parts);
 
 }

@@ -1,6 +1,10 @@
 package com.wd.tech.utils.presenter;
 
+import com.wd.tech.utils.model.MCallBack;
+
 import java.io.File;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public interface Presenter {
@@ -21,4 +25,6 @@ public interface Presenter {
 
     //添加请求
     void postaddfrient(String url,int firenduid,String remarks, Class clazz);
+    //上传图文
+    void imagepost(String url, HashMap<String, String> map, List<File> file , Class clazz);
 }

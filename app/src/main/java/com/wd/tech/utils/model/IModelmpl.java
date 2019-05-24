@@ -9,6 +9,8 @@ import com.wd.tech.app.MyApplication;
 import com.wd.tech.utils.netWork.RetorfitManager;
 
 import java.io.File;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.security.auth.callback.Callback;
@@ -177,6 +179,22 @@ public class IModelmpl implements Model{
             public void success(String result) {
                 Object o = new Gson().fromJson(result, clazz);
                 mCallBack.success(o);
+            }
+
+            @Override
+            public void failure(String error) {
+
+            }
+        });
+    }
+
+    @Override
+    public void imagepost(String url, HashMap<String, String> map, List<File> file, final Class clazz, final MCallBack callBack) {
+        RetorfitManager.getInstace().imagepost(url, map, file, new RetorfitManager.ICallBack() {
+            @Override
+            public void success(String result) {
+                Object o = new Gson().fromJson(result, clazz);
+                callBack.success(o);
             }
 
             @Override
