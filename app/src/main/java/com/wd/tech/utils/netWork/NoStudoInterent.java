@@ -26,7 +26,7 @@ public class NoStudoInterent {
     /*
      * 判断是否有网络连接
      * */
-    public boolean isNetworkConnected(Context context) {
+    public static boolean isNetworkConnected(Context context) {
         if (context != null) {
             ConnectivityManager mConnectivityManager = (ConnectivityManager) context
                     .getSystemService(CONNECTIVITY_SERVICE);

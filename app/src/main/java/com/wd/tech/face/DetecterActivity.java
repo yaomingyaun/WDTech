@@ -49,24 +49,29 @@ import com.guo.android_extend.widget.CameraSurfaceView;
 import com.guo.android_extend.widget.CameraSurfaceView.OnCameraListener;
 import com.wd.tech.R;
 import com.wd.tech.ShowActivity;
+import com.wd.tech.app.Apis;
 import com.wd.tech.app.MyApplication;
+import com.wd.tech.utils.presenter.IPresentermpl;
+import com.wd.tech.utils.view.IView;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by gqj3375 on 2017/4/28.
  */
 //
-public class DetecterActivity extends Activity implements OnCameraListener, View.OnTouchListener, Camera.AutoFocusCallback, View.OnClickListener {
+public class DetecterActivity extends Activity implements OnCameraListener, View.OnTouchListener, Camera.AutoFocusCallback, View.OnClickListener,IView {
 	private final String TAG = this.getClass().getSimpleName();
 
 	private int mWidth, mHeight, mFormat;
 	private CameraSurfaceView mSurfaceView;
 	private CameraGLSurfaceView mGLSurfaceView;
 	private Camera mCamera;
-
+    private IPresentermpl iPresentermpl=new IPresentermpl(this);
 	AFT_FSDKVersion version = new AFT_FSDKVersion();
 	AFT_FSDKEngine engine = new AFT_FSDKEngine();
 	ASAE_FSDKVersion mAgeVersion = new ASAE_FSDKVersion();
@@ -95,7 +100,22 @@ public class DetecterActivity extends Activity implements OnCameraListener, View
 		}
 	};
 
-	class FRAbsLoop extends AbsLoop {
+    @Override
+    public void success(Object data) {
+        if(data instanceof FaceBean)
+        {
+            FaceBean faceBean= (FaceBean) data;
+            Toast.makeText(this, faceBean.getFaceId()+"", Toast.LENGTH_SHORT).show();
+        }
+
+    }
+
+    @Override
+    public void failure(String error) {
+
+    }
+
+    class FRAbsLoop extends AbsLoop {
 
 		AFR_FSDKVersion version = new AFR_FSDKVersion();
 		AFR_FSDKEngine engine = new AFR_FSDKEngine();
@@ -149,6 +169,12 @@ public class DetecterActivity extends Activity implements OnCameraListener, View
 
 				//crop
 				byte[] data = mImageNV21;
+				String s1=new String(data);
+				Log.i("asdasdasdasdas",data+"");
+				Log.i("asdasdasdasdas",s1+"");
+//                Map<String,String> map=new HashMap<>();
+//                map.put("featureInfo",s1);
+//              iPresentermpl.putRequest(Apis.BINDINGFACEID,map,FaceBean.class);
 				YuvImage yuv = new YuvImage(data, ImageFormat.NV21, mWidth, mHeight, null);
 				ExtByteArrayOutputStream ops = new ExtByteArrayOutputStream();
 				yuv.compressToJpeg(mAFT_FSDKFace.getRect(), 80, ops);

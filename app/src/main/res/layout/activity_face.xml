@@ -15,13 +15,13 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Step1."
+            android:text="欢迎注册虹软科技."
             android:textColor="@color/colorAccent"/>
         <Button
             android:id="@+id/button1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="注册人脸" />
+            android:text="立即注册" />
     </LinearLayout>
 
 

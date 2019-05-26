@@ -7,11 +7,46 @@
     android:orientation="vertical"
     tools:context=".user.activity.MainActivity">
 
-    <ImageView
+    <RelativeLayout
+        android:id="@+id/wuwangluo"
+        android:layout_width="match_parent"
+
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/wu"
+            android:layout_width="@dimen/dp_180"
+            android:layout_height="@dimen/dp_180"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_150"
+            android:background="@mipmap/not_network_icon"/>
+        <TextView
+            android:id="@+id/wwl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/wu"
+            android:layout_centerHorizontal="true"
+            android:textSize="@dimen/sp_14"
+            android:textColor="#666666"
+            android:layout_marginTop="@dimen/dp_50"
+            android:text="网络不可用，请检查您的网络状态"/>
+        <Button
+            android:id="@+id/network_sz"
+            android:layout_width="@dimen/dp_100"
+            android:layout_height="@dimen/dp_40"
+            android:layout_below="@id/wwl"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_90"
+            android:textSize="@dimen/sp_14"
+            android:textColor="#fff"
+            android:background="@drawable/wunetwork"
+            android:text="连接网络"/>
+    </RelativeLayout>
+    <RelativeLayout
         android:id="@+id/yindaoye"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@mipmap/login_bg"/>
+        android:visibility="gone"
+        android:background="@mipmap/login_bg">
     <ImageView
         android:id="@+id/ydicon"
         android:layout_width="@dimen/dp_110"
@@ -39,7 +74,6 @@
         android:textSize="@dimen/sp_20"
         android:textColor="#ffffff"/>
     <TextView
-
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/wdkj2"
@@ -49,5 +83,5 @@
         android:textSize="@dimen/sp_20"
         android:layout_marginBottom="@dimen/dp_20"
         android:textColor="#ffffff"/>
-
+    </RelativeLayout>
 </RelativeLayout>
