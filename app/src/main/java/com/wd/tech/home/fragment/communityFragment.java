@@ -158,19 +158,23 @@ public class communityFragment extends Fragment implements IView {
                     @Override
                     public void onClick(View v) {
                         String pl=edit_talk.getText().toString();
-                        Map<String,String> map=new HashMap<>();
-                        map.put("communityId",mid+"");
-                        map.put("content",pl);
-                        iPresentermpl.postRequest(Api.ADDCOMMUNITYCOMMENT,map,AddNewsBean.class);
-                        ll_scroll.setVisibility(View.GONE);
-                        lodata();
+                        if(pl.length()==0)
+                        {
+                            Toast.makeText(getContext(), "输入不能为空！", Toast.LENGTH_SHORT).show();
+                        }else
+                        {
+                            Map<String,String> map=new HashMap<>();
+                            map.put("communityId",mid+"");
+                            map.put("content",pl);
+                            iPresentermpl.postRequest(Api.ADDCOMMUNITYCOMMENT,map,AddNewsBean.class);
+                            popupWindow.dismiss();
+                            lodata();
+                        }
                     }
                 });
             }
         });
     }
-
-
     /**
      * @param root         最外层布局，需要调整的布局
      * @param scrollToView 被键盘遮挡的scrollToView，滚动root,使scrollToView在root可视区域的底部
@@ -223,7 +227,6 @@ public class communityFragment extends Fragment implements IView {
     {
         iPresentermpl.getRequest(String.format(Api.FINDCOUMMUNITYLIST, page), PLBean.class);
     }
-
     @Override
     public void success (Object data){
         if(data instanceof PLBean)

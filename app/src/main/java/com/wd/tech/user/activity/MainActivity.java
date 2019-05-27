@@ -60,7 +60,6 @@ private Handler handler=new Handler() {
                     finish();
                     return;
                 }
-
                 t--;
                 handler.sendEmptyMessageDelayed(0, 1000);
                 break;

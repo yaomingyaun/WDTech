@@ -81,8 +81,6 @@ public class NewsMessageActivity extends AppCompatActivity implements IView {
     TextView messageok;
     @BindView(R.id.message_qx)
             TextView message_qx;
-    @BindView(R.id.messqge_yuyin)
-    TextView messqge_yuyin;
     public  final static int VEDIO_KU = 101;
     IPresentermpl iPresentermpl;
     private final int REQUEST_PICK = 200;
@@ -150,17 +148,10 @@ public class NewsMessageActivity extends AppCompatActivity implements IView {
             //权限已经都通过了，可以将程序继续打开了
             initWidget();
         }
-
-
-
-
-
     }
 
 
-
-
-    @OnClick({R.id.recycler,R.id.messageok,R.id.message_qx,R.id.messqge_yuyin})
+    @OnClick({R.id.recycler,R.id.messageok,R.id.message_qx})
         public  void  setlick(View view)
         {
                 switch (view.getId())

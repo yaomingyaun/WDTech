@@ -79,7 +79,9 @@
         <activity android:name=".message.activity.NewFriendActivity" />
         <activity android:name=".message.activity.AddGroupActivity" />
         <activity android:name=".activity.PhotoViewActivity" />
-        <activity android:name=".ShowActivity" />
+        <activity android:name=".ShowActivity"
+            android:windowSoftInputMode="adjustResize"
+            />
         <activity android:name=".AttentionActivity" />
         <activity android:name=".SettingActivity" />
         <activity android:name=".MessageActivity" />

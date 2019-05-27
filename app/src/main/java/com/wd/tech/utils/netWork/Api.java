@@ -196,7 +196,7 @@ public class Api {
     //社区用户评论列表（bean方式返参）
     public static final String FINDCOMMUNITYUSERCOMMENTLIST ="community/v1/findCommunityUserCommentList?communityId=%s&page=1&count=50";
     //社区评论
-    public static final String ADDCOMMUNITYCOMMENT = "community/verify/v1/addCommunityCommentt?communityId=%s&page=1&count=5";
+    public static final String ADDCOMMUNITYCOMMENT = "community/verify/v1/addCommunityComment";
     //我的帖子
     public static final String FINDMYPOSTBYID = "community/verify/v1/findMyPostById";
     // 查询用户发布的帖子
