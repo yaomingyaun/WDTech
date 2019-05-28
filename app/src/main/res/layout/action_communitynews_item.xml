@@ -40,7 +40,6 @@
 
             <TextView
                 android:id="@+id/Communtiy_text2"
-                android:text="时间"
                 android:layout_marginTop="@dimen/dp_10"
                 android:layout_marginLeft="@dimen/dp_20"
                 android:textSize="@dimen/sp_10"

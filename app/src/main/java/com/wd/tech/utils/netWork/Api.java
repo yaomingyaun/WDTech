@@ -149,7 +149,7 @@ public class Api {
     //上传群头像
     public static final String UPLOADGROUPHEADPIC = "group/verify/v1/uploadGroupHeadPic";
     //退群
-    public static final String RETREAT = "group/verify/v1/retreat";
+    public static final String RETREAT = "group/verify/v1/retreat?groupId=%s";
 
     //咨询相关
     //banner展示列表

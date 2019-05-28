@@ -24,14 +24,17 @@ import com.wd.tech.activity.PhotoViewActivity;
 import com.wd.tech.activity.QuerypostsActivity;
 import com.wd.tech.bean.PLBean;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Calendar;
 import java.util.List;
 
 public class CommunityNewsAdapter extends RecyclerView.Adapter<XRecyclerView.ViewHolder> {
     private List<PLBean.ResultBean> mdata;
     private Context context;
+    private  int hang;
 
     public CommunityNewsAdapter(Context context) {
         this.context = context;
@@ -63,12 +66,54 @@ public class CommunityNewsAdapter extends RecyclerView.Adapter<XRecyclerView.Vie
 
         String[] file = mdata.get(i).getFile().split(",");
         final ArrayList<String> objects = new ArrayList<>();
-
+        long formting = 0;
         objects.addAll(Arrays.asList(file));
         viewHolder1.Communtiy_text1.setText(mdata.get(i).getNickName());
         //日期
-        String date = new SimpleDateFormat("HH").format(new java.util.Date(mdata.get(i).getPublishTime()));
-        viewHolder1.Communtiy_text2.setText(date+"小时前");
+        SimpleDateFormat date = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//.format(new java.util.Date(mdata.get(i).getPublishTime()));
+           String qq= date.format(mdata.get(i).getPublishTime()) ;
+
+               Calendar calendar=Calendar.getInstance();
+               long  curr=calendar.getTimeInMillis();
+        try {
+             formting=date.parse(qq).getTime();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        long timechar=((curr-formting)/1000)-(8*60*6);
+
+        StringBuffer str=new StringBuffer();
+
+          if(timechar>=60&&timechar<3600)
+        {
+            String minu=str.append(timechar/60+"分钟前").toString();
+            viewHolder1.Communtiy_text2.setText(minu);
+        }
+        else  if(timechar>=3600&&timechar<3600*24)
+        {
+            String hour=str.append(timechar/3600+"小时前").toString();
+            viewHolder1.Communtiy_text2.setText(hour);
+        }
+        else  if(timechar>=3600*1*24&&timechar<3600*2*24)
+        {
+            String day1=str.append("1天前").toString();
+            viewHolder1.Communtiy_text2.setText(day1);
+        }
+        else  if(timechar>=3600*2*24&&timechar<3600*3*24)
+        {
+            String day2=str.append("2天前").toString();
+            viewHolder1.Communtiy_text2.setText(day2);
+        }
+        else  if(timechar>=3600*3*24&&timechar<3600*4*24)
+        {
+            String day3=str.append("3天前").toString();
+            viewHolder1.Communtiy_text2.setText(day3);
+        }else
+          {
+              String gg=str.append("刚刚").toString();
+              viewHolder1.Communtiy_text2.setText(gg);
+          }
+        //  viewHolder1.Communtiy_text2.setText(date);
         viewHolder1.Communtiy_text5.setText(mdata.get(i).getContent());
         viewHolder1.signature.setText(mdata.get(i).getSignature());
         viewHolder1.Communtiy_text3.setText(mdata.get(i).getComment()+"");
@@ -111,6 +156,23 @@ public class CommunityNewsAdapter extends RecyclerView.Adapter<XRecyclerView.Vie
                 }
             }
         });
+        if(file.equals("")||file==null)
+        {
+            viewHolder1.asdasdasdasdasdas.setVisibility(View.GONE);
+        }else
+        {
+            viewHolder1.asdasdasdasdasdas.setVisibility(View.VISIBLE);
+            if(file.length==1)
+            {
+                hang=1;
+            }else  if(file.length==2)
+            {
+                hang=2;
+            }else
+            {
+                hang=3;
+            }
+        }
 
         //判断图片是否有数据
         if(mdata.get(i).getFile().length()==0)
@@ -118,7 +180,7 @@ public class CommunityNewsAdapter extends RecyclerView.Adapter<XRecyclerView.Vie
             viewHolder1.asdasdasdasdasdas.setVisibility(View.GONE);
         }else
         {
-            GridLayoutManager gridLayoutManager=new GridLayoutManager(context,3);
+            GridLayoutManager gridLayoutManager=new GridLayoutManager(context,hang);
             viewHolder1.asdasdasdasdasdas.setLayoutManager(gridLayoutManager);
             NewsIconAdapter newsIconAdapter=new NewsIconAdapter(context,file);
             viewHolder1.asdasdasdasdasdas.setAdapter(newsIconAdapter);

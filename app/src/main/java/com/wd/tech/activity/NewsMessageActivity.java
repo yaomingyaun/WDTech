@@ -2,6 +2,7 @@ package com.wd.tech.activity;
 
 import android.Manifest;
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -106,6 +107,7 @@ public class NewsMessageActivity extends AppCompatActivity implements IView {
     List<String> mPermissionList = new ArrayList<>();
     private final int mRequestCode = 100;//权限请求码
     AlertDialog mPermissionDialog;
+    private ProgressDialog progressDialog;
     String mPackName = "com.wd.tech";
 
     @Override
@@ -174,8 +176,10 @@ public class NewsMessageActivity extends AppCompatActivity implements IView {
                             map.put("content",name);
                             //MultipartBody build=builder.build();
                             iPresentermpl.imagepost(Api.RELEASEPOST,map,files,NewsReplaceBean.class);
+                            showProgressDialog("请稍后","正在上传中");
+
                         }
-                        finish();
+
                         break;
                     case R.id.message_qx:
                             finish();
@@ -266,6 +270,17 @@ public  void  initWidget()
                                 .maxSelectNum(maxSelectNum)
                                 .minSelectNum(1)
                                 .imageSpanCount(4)
+                                .enableCrop(true)// 是否裁剪 true or false
+                                .compress(true)// 是否压缩 true or false
+                                .withAspectRatio(1,1)// int 裁剪比例 如16:9 3:2 3:4 1:1 可自定义
+                                .hideBottomControls(true)// 是否显示uCrop工具栏，默认不显示 true or false
+                                .circleDimmedLayer(true)// 是否圆形裁剪 true or false
+                                .showCropFrame(true)// 是否显示裁剪矩形边框 圆形裁剪时建议设为false   true or false
+                                .showCropGrid(true)// 是否显示裁剪矩形网格 圆形裁剪时建议设为false    true or false
+                                .selectionMedia(selectList)// 是否传入已选图片 List<LocalMedia> list
+                                .cropCompressQuality(90)// 裁剪压缩质量 默认90 int
+                                .rotateEnabled(true) // 裁剪是否可旋转图片 true or false
+                                .scaleEnabled(true)// 裁剪是否可放大缩小图片 true or false
                                 .selectionMode(PictureConfig.MULTIPLE)
                                 .forResult(PictureConfig.CHOOSE_REQUEST);
                         break;
@@ -294,6 +309,26 @@ public  void  initWidget()
             pop = null;
         }
     }
+    public void showProgressDialog(String title, String message) {
+        if (progressDialog == null) {
+
+            progressDialog = ProgressDialog.show(NewsMessageActivity.this,
+                    title, message, true, false);
+        } else if (progressDialog.isShowing()) {
+            progressDialog.setTitle(title);
+            progressDialog.setMessage(message);
+        }
+
+        progressDialog.show();
+
+    }
+
+    public void hideProgressDialog() {
+        if (progressDialog != null && progressDialog.isShowing()) {
+            progressDialog.dismiss();
+        }
+
+    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -303,7 +338,6 @@ public  void  initWidget()
             switch (requestCode) {
                 case PictureConfig.CHOOSE_REQUEST:
                     // 图片选择结果回调
-
                     images = PictureSelector.obtainMultipleResult(data);
                     selectList.addAll(images);
                     for (int i = 0; i < selectList.size(); i++) {
@@ -474,6 +508,8 @@ public  void  initWidget()
             if(newsReplaceBean.getMessage().equals("发布成功"))
             {
                 Toast.makeText(this, "发布成功", Toast.LENGTH_SHORT).show();
+                hideProgressDialog();
+                finish();
             }else
             {
                 Toast.makeText(this, "发布失败", Toast.LENGTH_SHORT).show();

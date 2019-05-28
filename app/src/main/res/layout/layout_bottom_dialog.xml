@@ -14,7 +14,6 @@
             android:id="@+id/tv_album"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
             android:gravity="center"
             android:padding="15dp"
             android:text="相册"
@@ -29,7 +28,6 @@
             android:id="@+id/tv_camera"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
             android:gravity="center"
             android:padding="15dp"
             android:text="拍照"
@@ -40,7 +38,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-
             android:gravity="center"
             android:padding="15dp"
             android:text="取消"

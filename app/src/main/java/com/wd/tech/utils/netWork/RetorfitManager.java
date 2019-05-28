@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.text.TextUtils;
 import android.util.Log;
-import android.widget.GridView;
+
 
 import com.wd.tech.app.MyApplication;
 

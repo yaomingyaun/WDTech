@@ -24,6 +24,7 @@ import com.facebook.drawee.view.SimpleDraweeView;
 
 import com.wd.tech.app.MyApplication;
 import com.wd.tech.bean.SCTXBean;
+import com.wd.tech.bean.TQBean;
 import com.wd.tech.face.FaceActivity;
 import com.wd.tech.bean.infoByUserBean;
 import com.wd.tech.utils.netWork.Api;
@@ -49,7 +50,7 @@ public class SettingActivity extends AppCompatActivity implements IView {
     @BindView(R.id.my_setting_tou)
     RelativeLayout mySettingTou;
     @BindView(R.id.my_setting_name_user)
-    TextView mySettingNameUser;
+    TextView my_setting_name_user;
     @BindView(R.id.my_setting_name)
     RelativeLayout mySettingName;
     @BindView(R.id.my_setting_sex_user)
@@ -99,15 +100,17 @@ public class SettingActivity extends AppCompatActivity implements IView {
          iPresentermpl = new IPresentermpl(this);
         iPresentermpl.getRequest(Api.INFOBYUSERID, infoByUserBean.class);
     }
-    @OnClick({R.id.my_setting_Face_user,R.id.my_setting_img})
+    @OnClick({R.id.my_setting_Face_user,R.id.my_setting_img,R.id.my_setting_name_user})
     public  void  setlcik(View view)
     {
         switch (view.getId())
         {
+            //注册人脸
             case R.id.my_setting_Face_user:
                 Intent intent=new Intent(this,FaceActivity.class);
                startActivity(intent);
                 break;
+                //点击换头像
             case R.id.my_setting_img:
                 if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.M) {
                     String[] mStatenetwork = new String[]{
@@ -135,6 +138,9 @@ public class SettingActivity extends AppCompatActivity implements IView {
 
                 getCamera();
                 break;
+            case R.id.my_setting_name_user:
+               iPresentermpl.deleteRequest(String.format(Api.RETREAT,"id"),TQBean.class);
+                break;
                 default:break;
         }
     }
@@ -150,7 +156,7 @@ public class SettingActivity extends AppCompatActivity implements IView {
         popupWindow.setTouchable(true);
         //   popupWindow.setContentView(view);
         popupWindow.setBackgroundDrawable(new BitmapDrawable());
-        popupWindow.showAsDropDown(my_setting_img, 50, 50);
+        popupWindow.showAsDropDown(mySettingTou, 50, 50);
         photo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -238,7 +244,7 @@ public class SettingActivity extends AppCompatActivity implements IView {
             infoByUserBean.ResultBean result = info.getResult();
             Uri uri = Uri.parse(result.getHeadPic());
             my_setting_img.setImageURI(uri);
-            mySettingNameUser.setText(result.getNickName());
+            my_setting_name_user.setText(result.getNickName());
             mySettingSexUser.setText(result.getSex());
             mySettingPhoneUser.setText(result.getPhone());
             mySettingEmailUser.setText(result.getEmail());
@@ -255,6 +261,18 @@ public class SettingActivity extends AppCompatActivity implements IView {
             }else
             {
                 Toast.makeText(this, "上传失败", Toast.LENGTH_SHORT).show();
+            }
+        }
+        if(data instanceof TQBean)
+        {
+            TQBean tqBean= (TQBean) data;
+            if(tqBean.getMessage().equals("退群成功"))
+            {
+                Toast.makeText(this, tqBean.getMessage()+"", Toast.LENGTH_SHORT).show();
+
+            }else
+            {
+                Toast.makeText(this, tqBean.getMessage()+"", Toast.LENGTH_SHORT).show();
             }
         }
     }
